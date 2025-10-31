@@ -12,11 +12,11 @@ contract DeployMoodNft is Script {
         string memory happySvg = vm.readFile("./img/happy.svg");
 
         vm.startBroadcast();
-        MoodNft MoodNft = new MoodNft(
+        MoodNft moodNft = new MoodNft(
             svgToImageURI(sadSvg),
             svgToImageURI(happySvg)
         );
-        vm.stopBroadcast;
+        vm.stopBroadcast();
         return moodNft;
     }
 
